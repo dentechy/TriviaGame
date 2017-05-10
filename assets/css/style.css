@@ -4,6 +4,9 @@ body {
     background-image: url("../images/matrix_background.jpg");
 }
 
+.container {
+    text-align: center;
+}
 
 #mainEvent {
     padding-top: 20px;
