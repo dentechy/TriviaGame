@@ -27,6 +27,7 @@ function stop() {
 
 function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
+    $("#trivia2").html("The easiest way to improve the performance of a laptop is:");
 }
 
 
