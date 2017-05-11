@@ -28,6 +28,7 @@ function stop() {
 function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
     $("#trivia2").html("The best way to improve the performance of a laptop is:");
+    $("#trivia3").html("Which of the following is an example of a private IP address?");
 }
 
 function triviaResponses() {
@@ -35,7 +36,7 @@ function triviaResponses() {
     var answers1 = ["Windows 10", "Android", "macOS", "Ubuntu Linux"];
 
     for (i = 0; i < answers1.length; i++) {
-        $("#response1a").append("<input type='radio' name='reponse1a' value=" + answers1[i] + ">" + "<label>" + answers1[i] + "</label>");
+        $("#response1a").append("<input type='radio' name='response1a' value=" + answers1[i] + ">" + "<label>" + answers1[i] + "</label>");
     }
 
     // $("#response1a").append("<input type='radio' name='response1a' value='Windows 10'>" + "<label>" + "Windows 10" + "</label>");
@@ -46,12 +47,18 @@ function triviaResponses() {
 
     // $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
 
-    var answers2 = ["Adding an SSD", "Using Power Saver Mode", "Adding a 5400RPM HDD", "Installing latest drivers"]
+    var answers2 = ["Adding an SSD", "Using Power Saver Mode", "Adding a 5400RPM HDD", "Installing latest drivers"];
 
     for (i = 0; i < answers2.length; i++) {
-        $("#response2a").append("<input type='radio' name='reponse2a' value=" + answers2[i] + ">" + "<label>" + answers2[i] + "</label>");
+        $("#response2a").append("<input type='radio' name='response2a' value=" + answers2[i] + ">" + "<label>" + answers2[i] + "</label>");
     }
 
+	var answers3 = ["172.217.10.46", "216.155.129.35", "54.173.76.18", "192.168.0.100"];
+	// google.com, us-east.privateinternetaccess.com, netflix.com, private IP address
+	
+	for (i = 0; i < answers3.length; i++) {
+        $("#response3a").append("<input type='radio' name='response3a' value=" + answers3[i] + ">" + "<label>" + answers3[i] + "</label>");
+    }
 }
 
 $("#startGame").click(function() {
