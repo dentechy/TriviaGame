@@ -15,7 +15,7 @@ function decrement() {
     if (timeRemaining === 0) {
 
     stop();
-
+    //Also need to run a different function that changes the page again and shows game stats.
     alert("Time's Up!");
     }
 }
@@ -25,10 +25,15 @@ function stop() {
     clearInterval(intervalId);
 }
 
-
+function triviaQuestions() {
+    $("#trivia1").html("What is the most widely used operating system in the world?");
+}
 
 
 $("#startGame").click(function() {
     $("#startGame").remove();
     countDown();
-})
+    setTimeout(function() {
+        triviaQuestions();
+    }, 1000);
+    })
