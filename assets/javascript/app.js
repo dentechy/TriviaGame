@@ -31,13 +31,22 @@ function triviaQuestions() {
 }
 
 function triviaResponses() {
-    $("#response1a").append("<input type='radio' name='response1a' value='Windows 10'>" + "<label>" + "Windows 10" + "</label>");
+    //Below are the respones to question 1
+    var answers1 = ["Windows 10", "Android", "macOS", "Ubuntu Linux"];
 
-    $("#response1a").append("<input type='radio' name='response1a' value='Android'>" + "<label>" + "Android" + "</label>");
+    for (i = 0; i < answers1.length; i++) {
+        $("#response1a").append("<input type='radio' name='reponse1a' value=" + answers1[i] + ">" + "<label>" + answers1[i] + "</label>");
+    }
 
-    $("#response1a").append("<input type='radio' name='response1a' value='macOS'>" + "<label>" + "macOS" + "</label>");
+    // $("#response1a").append("<input type='radio' name='response1a' value='Windows 10'>" + "<label>" + "Windows 10" + "</label>");
 
-    $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
+    // $("#response1a").append("<input type='radio' name='response1a' value='Android'>" + "<label>" + "Android" + "</label>");
+
+    // $("#response1a").append("<input type='radio' name='response1a' value='macOS'>" + "<label>" + "macOS" + "</label>");
+
+    // $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
+
+  
 }
 
 $("#startGame").click(function() {
