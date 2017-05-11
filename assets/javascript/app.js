@@ -30,11 +30,21 @@ function triviaQuestions() {
     $("#trivia2").html("The easiest way to improve the performance of a laptop is:");
 }
 
+function triviaResponses() {
+    $("#response1a").append("<input type='radio' name='response1a' value='Windows 10'>" + "<label>" + "Windows 10" + "</label>");
+
+    $("#response1a").append("<input type='radio' name='response1a' value='Android'>" + "<label>" + "Android" + "</label>");
+
+    $("#response1a").append("<input type='radio' name='response1a' value='macOS'>" + "<label>" + "macOS" + "</label>");
+
+    $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
+}
 
 $("#startGame").click(function() {
     $("#startGame").remove();
     countDown();
     setTimeout(function() {
         triviaQuestions();
+        triviaResponses();
     }, 1000);
     })

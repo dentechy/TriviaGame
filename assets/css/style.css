@@ -10,15 +10,18 @@ body {
 
 #mainEvent {
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     margin-top: 20px;
     background-color: black;
     color: white;
     font-family: Consolas;
-    height: 400px;
+    height: auto;
     border: none;
 }
 
+form {
+    color: white;
+}
 
 #triviaTitle {
     text-align: center;
@@ -28,4 +31,12 @@ body {
 
 #startGame {
     width: 20%;
+}
+
+input[type="radio"] {
+    margin: 0 10px 0 10px;
+}
+
+label {
+    font-size: 150%;
 }
