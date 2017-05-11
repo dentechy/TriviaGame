@@ -27,11 +27,11 @@ function stop() {
 
 function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
-    $("#trivia2").html("The easiest way to improve the performance of a laptop is:");
+    $("#trivia2").html("The best way to improve the performance of a laptop is:");
 }
 
 function triviaResponses() {
-    //Below are the respones to question 1
+    //Below are the responses to question 1
     var answers1 = ["Windows 10", "Android", "macOS", "Ubuntu Linux"];
 
     for (i = 0; i < answers1.length; i++) {
@@ -46,7 +46,12 @@ function triviaResponses() {
 
     // $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
 
-  
+    var answers2 = ["Adding an SSD", "Using Power Saver Mode", "Adding a 5400RPM HDD", "Installing latest drivers"]
+
+    for (i = 0; i < answers2.length; i++) {
+        $("#response2a").append("<input type='radio' name='reponse2a' value=" + answers2[i] + ">" + "<label>" + answers2[i] + "</label>");
+    }
+
 }
 
 $("#startGame").click(function() {
