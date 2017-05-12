@@ -29,6 +29,7 @@ function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
     $("#trivia2").html("The best way to improve the performance of a laptop is:");
     $("#trivia3").html("Which of the following is an example of a private IP address?");
+    $("#trivia4").html("");
 }
 
 function triviaResponses() {
