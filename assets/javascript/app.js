@@ -29,7 +29,8 @@ function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
     $("#trivia2").html("The best way to improve the performance of a laptop is:");
     $("#trivia3").html("Which of the following is an example of a private IP address?");
-    $("#trivia4").html("");
+    $("#trivia4").html("The exact resolution of widescreen (16:9) 4K UHD is:");
+    $("#trivia5").html("Which metal is the best conductor of electricity?");
 }
 
 function triviaResponses() {
@@ -54,11 +55,23 @@ function triviaResponses() {
         $("#response2a").append("<input type='radio' name='response2a' value=" + answers2[i] + ">" + "<label>" + answers2[i] + "</label>");
     }
 
-	var answers3 = ["172.217.10.46", "216.155.129.35", "54.173.76.18", "192.168.0.100"];
+    var answers3 = ["172.217.10.46", "216.155.129.35", "54.173.76.18", "192.168.0.100"];
 	// google.com, us-east.privateinternetaccess.com, netflix.com, private IP address
 	
 	for (i = 0; i < answers3.length; i++) {
         $("#response3a").append("<input type='radio' name='response3a' value=" + answers3[i] + ">" + "<label>" + answers3[i] + "</label>");
+    }
+
+    var answers4 = ["1280x720", "2560x1440", "3840x2160", "1920x1080"]; 
+
+    for (i = 0; i < answers4.length; i++) {
+        $("#response4a").append("<input type='radio' name='response4a' value=" + answers4[i] + ">" + "<label>" + answers4[i] + "</label>");
+    }
+
+    var answers5 = ["Silver", "Copper", "Gold", "Iron"]; 
+
+    for (i = 0; i < answers5.length; i++) {
+        $("#response5a").append("<input type='radio' name='response5a' value=" + answers5[i] + ">" + "<label>" + answers5[i] + "</label>");
     }
 }
 
