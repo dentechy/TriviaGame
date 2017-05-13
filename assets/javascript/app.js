@@ -4,6 +4,14 @@ var timeRemaining = 6;
 var correctOnes = 0;
 var incorrectOnes = 0;
 var unansweredOnes = 0;
+var answers1 = ["Windows 10", "Android", "macOS", "Ubuntu Linux"];
+var answers2 = ["Adding an SSD", "Using Power Saver Mode", "Adding a 5400RPM HDD", "Installing latest drivers"];
+var answers3 = ["172.217.10.46", "216.155.129.35", "54.173.76.18", "192.168.0.100"];
+// google.com, us-east.privateinternetaccess.com, netflix.com, private IP address
+var answers4 = ["1280x720", "2560x1440", "3840x2160", "1920x1080"]; 
+var answers5 = ["Silver", "Copper", "Gold", "Iron"]; 
+
+
 
 //Define a function that starts the timer.
 function countDown() {
@@ -15,6 +23,7 @@ function decrement() {
     timeRemaining--;
     $("#timer").html("Time Remaining: " + timeRemaining + " seconds");
     checkResponses();
+    //checkBlanks();
 
     if (timeRemaining === 0) {
 
@@ -53,12 +62,21 @@ function checkResponses() {
         else if (this.checked) {
             incorrectOnes++;
         }
-        else if (!$("input[name='response1a']:checked").val()) {
-            unansweredOnes++;
-        }
     });
 }
 
+//function checkBlanks() {
+//    var arr = ["response1a", "response2a", "response3a", "response4a", "response5a"];
+//    for (x = 0; x < arr.length; x++) {
+//        if ($("input[type=radio][name=" + arr[x] + "]:checked").val()) {
+//            continue;
+//        }
+//        //continue here and figure out why there are syntax issues
+//        else if  (!$("input[type=radio][value=" + answers1[0] + "]" + "[name=" + arr[x] + "]:checked").val() && !$("input[type=radio][value=" + answers1[1] + "]" + "[name=" + arr[x] + "]:checked").val() &&  !$("input[type=radio][value=" + answers1[2] + "]" + "[name=" + arr[x] + "]:checked").val() &&  !$("input[type=radio][value=" + answers1[3] + "]" + "[name=" + arr[x] + "]:checked").val()) {
+//            unansweredOnes++;
+//        }
+//    } 
+//}
 function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
     $("#trivia2").html("The best way to improve the performance of a laptop is:");
@@ -68,45 +86,32 @@ function triviaQuestions() {
 }
 
 function triviaResponses() {
-    //Below are the responses to question 1
-    var answers1 = ["Windows 10", "Android", "macOS", "Ubuntu Linux"];
+
 
     for (i = 0; i < answers1.length; i++) {
         $("#response1a").append("<input type='radio' name='response1a' value=" + answers1[i] + ">" + "<label>" + answers1[i] + "</label>");
     }
 
-    // $("#response1a").append("<input type='radio' name='response1a' value='Windows 10'>" + "<label>" + "Windows 10" + "</label>");
-
-    // $("#response1a").append("<input type='radio' name='response1a' value='Android'>" + "<label>" + "Android" + "</label>");
-
-    // $("#response1a").append("<input type='radio' name='response1a' value='macOS'>" + "<label>" + "macOS" + "</label>");
-
-    // $("#response1a").append("<input type='radio' name='response1a' value='Ubuntu Linux'>" + "<label>" + "Ubuntu Linux" + "</label>");
-
-    var answers2 = ["Adding an SSD", "Using Power Saver Mode", "Adding a 5400RPM HDD", "Installing latest drivers"];
 
     for (i = 0; i < answers2.length; i++) {
         $("#response2a").append("<input type='radio' name='response2a' value=" + answers2[i] + ">" + "<label>" + answers2[i] + "</label>");
     }
 
-    var answers3 = ["172.217.10.46", "216.155.129.35", "54.173.76.18", "192.168.0.100"];
-	// google.com, us-east.privateinternetaccess.com, netflix.com, private IP address
 	
-	for (i = 0; i < answers3.length; i++) {
+    for (i = 0; i < answers3.length; i++) {
         $("#response3a").append("<input type='radio' name='response3a' value=" + answers3[i] + ">" + "<label>" + answers3[i] + "</label>");
     }
 
-    var answers4 = ["1280x720", "2560x1440", "3840x2160", "1920x1080"]; 
 
     for (i = 0; i < answers4.length; i++) {
         $("#response4a").append("<input type='radio' name='response4a' value=" + answers4[i] + ">" + "<label>" + answers4[i] + "</label>");
     }
 
-    var answers5 = ["Silver", "Copper", "Gold", "Iron"]; 
 
     for (i = 0; i < answers5.length; i++) {
         $("#response5a").append("<input type='radio' name='response5a' value=" + answers5[i] + ">" + "<label>" + answers5[i] + "</label>");
     }
+
 }
 
 $("#startGame").click(function() {
