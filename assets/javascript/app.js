@@ -1,6 +1,9 @@
 //Start button is a click function that changes the content of the main center panel.
 //When clicked, it starts a timer.
-var timeRemaining = 46;
+var timeRemaining = 6;
+var correctOnes = 0;
+var incorrectOnes = 0;
+var unansweredOnes = 0;
 
 //Define a function that starts the timer.
 function countDown() {
@@ -11,18 +14,49 @@ function decrement() {
 
     timeRemaining--;
     $("#timer").html("Time Remaining: " + timeRemaining + " seconds");
+    checkResponses();
 
     if (timeRemaining === 0) {
 
     stop();
     //Also need to run a different function that changes the page again and shows game stats.
     alert("Time's Up!");
+    thirdPage(); //erases the contents of page and replaces them with game stats
     }
 }
 
 function stop() {
 
     clearInterval(intervalId);
+}
+
+function thirdPage() {
+        var removeSections = ["#timer", "#trivia1", "#trivia2", "#trivia3", "#trivia4", "#trivia5", "#response1a", "#response2a", "#response3a", "#response4a", "#response5a"];
+        for (i = 0; i < removeSections.length; i++) {
+        $(removeSections[i]).remove();
+        }
+        var addStats = ["#Finished", "#correctOnes", "#incorrectOnes", "#unansweredOnes", "#triviaTitle"];
+        $(addStats[0]).html("Finished!");
+        $(addStats[1]).html("Correct Answers: " + correctOnes);
+        $(addStats[2]).html("Incorrect Answers: " + incorrectOnes);
+        $(addStats[3]).html("Unanswered: " + unansweredOnes);
+        $(addStats[3]).css("padding-bottom", "50px");
+        $(addStats[4]).css("padding-bottom", "10px");
+}
+
+//As the name implies, this function below keeps track of the user's responses to the trivia questions. As of now, it has no way to track if no answer was clicked.
+function checkResponses() {
+    $("input[type=radio][name=response1a]").change(function(){
+        if (this.value == "Android" && this.checked) {
+            correctOnes++;
+        }
+        else if (this.checked) {
+            incorrectOnes++;
+        }
+        else if (!$("input[name='response1a']:checked").val()) {
+            unansweredOnes++;
+        }
+    });
 }
 
 function triviaQuestions() {
