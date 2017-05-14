@@ -1,6 +1,6 @@
 //Start button is a click function that changes the content of the main center panel.
 //When clicked, it starts a timer.
-var timeRemaining = 6;
+var timeRemaining = 31;
 var correctOnes = 0;
 var incorrectOnes = 0;
 var unansweredOnes = 0;
@@ -23,7 +23,7 @@ function decrement() {
     timeRemaining--;
     $("#timer").html("Time Remaining: " + timeRemaining + " seconds");
     checkResponses();
-    //checkBlanks();
+    checkBlanks();
 
     if (timeRemaining === 0) {
 
@@ -63,20 +63,44 @@ function checkResponses() {
             incorrectOnes++;
         }
     });
+    $("input[type=radio][name=response2a]").change(function(){
+        if (this.value == "Adding an SSD" && this.checked) {
+            correctOnes++;
+        }
+        else if (this.checked) {
+            incorrectOnes++;
+        }
+    });
+    $("input[type=radio][name=response3a]").change(function(){
+        if (this.value == "192.168.0.100" && this.checked) {
+            correctOnes++;
+        }
+        else if (this.checked) {
+            incorrectOnes++;
+        }
+    });
+    $("input[type=radio][name=response4a]").change(function(){
+        if (this.value == "3840x2160" && this.checked) {
+            correctOnes++;
+        }
+        else if (this.checked) {
+            incorrectOnes++;
+        }
+    });
+    $("input[type=radio][name=response5a]").change(function(){
+        if (this.value == "Silver" && this.checked) {
+            correctOnes++;
+        }
+        else if (this.checked) {
+            incorrectOnes++;
+        }
+    });
 }
 
-//function checkBlanks() {
-//    var arr = ["response1a", "response2a", "response3a", "response4a", "response5a"];
-//    for (x = 0; x < arr.length; x++) {
-//        if ($("input[type=radio][name=" + arr[x] + "]:checked").val()) {
-//            continue;
-//        }
-//        //continue here and figure out why there are syntax issues
-//        else if  (!$("input[type=radio][value=" + answers1[0] + "]" + "[name=" + arr[x] + "]:checked").val() && !$("input[type=radio][value=" + answers1[1] + "]" + "[name=" + arr[x] + "]:checked").val() &&  !$("input[type=radio][value=" + answers1[2] + "]" + "[name=" + arr[x] + "]:checked").val() &&  !$("input[type=radio][value=" + answers1[3] + "]" + "[name=" + arr[x] + "]:checked").val()) {
-//            unansweredOnes++;
-//        }
-//    } 
-//}
+function checkBlanks() {
+    
+}
+
 function triviaQuestions() {
     $("#trivia1").html("What is the most widely used operating system in the world?");
     $("#trivia2").html("The best way to improve the performance of a laptop is:");
